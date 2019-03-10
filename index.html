@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/CSS/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Tic-Tak-Toe</title>
+  </head>
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-5">Tic-Tak-Toe</h1>
+      <p class="lead">The classic game you love to play!</p>
+    </div>
+
+    <div id="game-view">
+      <div id="game-view-info">
+        {{ infoMessage }}
+      </div>
+      <div id="game-view-squares">
+        <div v-for="(square, i) in squares" v-on:click="makeMove(i)" v-bind:class="{highlighted: square.isHighLighted}" class="game-view-square">
+          {{ square.value }}
+        </div>
+      </div>
+
+      <div id="button-reset">
+        <button type="button" v-on:click="resetGame" class="btn btn-outline-danger">Play Again</button>
+      </div>
+
+    </div>
+
+
+    <div class="footer">
+      <a href="https://github.com/bradley-hales/TickTakToe">GitHub Classroom</a>
+    </div>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+      <script src="/js/script.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
